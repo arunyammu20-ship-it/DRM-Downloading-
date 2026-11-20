@@ -206,7 +206,7 @@ async def rip_cmd(client, message):
     if len(args) < 2:
         await message.reply_text(
             "❌ Usage: /rip <platform> <url> [quality]\n\n"
-            "Example: /rip hotstar https://... 1080p"
+            "Example: /rip Zee5 https://... 1080p"
         )
         return
 
@@ -318,7 +318,7 @@ async def handle_user_inputs(client, message):
     url_match = re.search(r'https?://[^\s]+', text)
     extracted_url = url_match.group(0) if url_match else text
 
-    if any(p in extracted_url for p in ["hotstar.com", "jiocinema.com", "jiohotstar.com"]):
+    if any(p in extracted_url for p in ["zee5.com", "zee5.com", "zee5.com"]):
         parts = text.split("-n")
         url = url_match.group(0) if url_match else parts[0].strip()
         custom_name = parts[1].strip() if len(parts) > 1 else None
