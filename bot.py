@@ -153,7 +153,7 @@ async def start(client, message):
 
     text = (
         "🎬 OTT Downloader Bot\n\n"
-        "Download from Zee5 JioHotstar & other OTT platforms directly via Telegram.\n\n"
+        "Download from Zee5 & JioHotstar Downloading other OTT platforms directly via Telegram.\n\n"
         "Quick commands:\n"
         "/rip <platform> <url> — Start a download\n"
         "/status — View active downloads\n"
