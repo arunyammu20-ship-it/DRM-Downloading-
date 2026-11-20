@@ -153,7 +153,7 @@ async def start(client, message):
 
     text = (
         "🎬 OTT Downloader Bot\n\n"
-        "Download from JioHotstar & other OTT platforms directly via Telegram.\n\n"
+        "Download from Zee5 JioHotstar & other OTT platforms directly via Telegram.\n\n"
         "Quick commands:\n"
         "/rip <platform> <url> — Start a download\n"
         "/status — View active downloads\n"
@@ -318,7 +318,7 @@ async def handle_user_inputs(client, message):
     url_match = re.search(r'https?://[^\s]+', text)
     extracted_url = url_match.group(0) if url_match else text
 
-    if any(p in extracted_url for p in ["zee5.com", "zee5.com", "zee5.com"]):
+    if any(p in extracted_url for p in ["zee5.com", "zee5.onelink.me", "zee5.com"]):
         parts = text.split("-n")
         url = url_match.group(0) if url_match else parts[0].strip()
         custom_name = parts[1].strip() if len(parts) > 1 else None
