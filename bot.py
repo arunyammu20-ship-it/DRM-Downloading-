@@ -387,7 +387,7 @@ async def handle_user_inputs(client, message):
 
         except Exception as e:
             logging.exception("Info extraction error: %s", e)
-            await status_msg.edit_text(f"❌ Could not fetch video info.\n\nReason: <code>{html.escape(str(e)[:500])}</code>", parse_mode="html")
+            await status_msg.edit_text(f"❌ Could not fetch video info.\n\nReason: <code>{html.escape(str(e)[:500])}</code>", parse_mode="HTML")
     else:
         await message.reply_text("❌ Please send a valid OTT link or use /rip command.")
 
@@ -463,6 +463,7 @@ async def download_final_media(client, callback_query: CallbackQuery):
     ydl_opts = {
         'format': format_str,
         'outtmpl': 'downloads/%(title)s.%(ext)s',
+        'merge_output_format': 'mp4',
         'progress_hooks': [get_progress_hook(client, status_msg, user_id, f"Downloading {quality}p Video")],
     }
 
